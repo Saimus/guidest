@@ -6,3 +6,16 @@ GET http://localhost:{{port}}
 ###
 
 GET http://localhost:{{port}}/users
+
+###
+
+POST http://localhost:{{port}}/guides
+Content-Type: application/json
+
+{
+    "name": "Test"
+}
+
+###
+
+GET http://localhost:{{port}}/guides
