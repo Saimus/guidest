@@ -1,9 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn  } from 'typeorm';
+import { Entity, Column, PrimaryColumn  } from 'typeorm';
 
-@Entity()
+@Entity('guides')
 export class Guide {
-    @PrimaryGeneratedColumn()
-    id: number;
+    
+    @PrimaryColumn('uuid')
+    id: string;
 
     @Column()
     name: string;

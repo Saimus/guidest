@@ -18,7 +18,7 @@ export class GuidesController {
     }
 
     @Get(':id')
-    getGuide(@Param('id') id: number) {
+    getGuide(@Param('id') id) {
         return this.guidesService.get(id);
     }
 
