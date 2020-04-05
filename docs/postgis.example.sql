@@ -1,50 +1,10 @@
-# Architecture
-
-![alt text][architecture]
-
-# Backend 
-
-## Frameworks
-
-[Node](https://github.com/nodejs/node)  
-[Express](https://github.com/expressjs/express)  
-[NestJS](https://github.com/nestjs/nest)
-
-## Spatial database
-
-Install postgis  
-
-```
-docker run --name postgis -p 5432:5432 -e POSTGRES_PASSWORD=12345678a postgis/postgis
-```
-
-Create database named guidest;
-```
-CREATE DATABASE guidest;
-```
-
-Install all necessary functions, etc... on the database
-```
 CREATE EXTENSION postgis;
-```
+CREATE TABLE IF NOT EXISTS world (id uuid, type varchar(10));
 
-Create table with non-spatial columns
-
-```
-CREATE TABLE world (id uuid, type varchar(10));
-```
-
-Add spatial column, index etc...
-
-```
 -- https://en.wikipedia.org/wiki/Spatial_reference_system#Identifier
 -- WGS84 = 4326
 SELECT AddGeometryColumn('world', 'geom', 4326, 'GEOMETRY', 2);
-```
 
-Example of how an item can be inserted using geoJson.
-
-```
 INSERT INTO world (id, type, geom)
 VALUES (
     '40bb0724-441f-4cfb-b101-e2859621adc7',
@@ -63,11 +23,7 @@ VALUES (
         "crs":{"type":"name","properties":{"name":"EPSG:4326"}}
     }')
 )
-```
 
-Query to top-n items nearby a point
-
-```
 SELECT ST_Distance(w.geom,
     ST_SetSRID(
         ST_MakePoint(51.5039510459368, -0.08750438690185547),
@@ -75,6 +31,4 @@ SELECT ST_Distance(w.geom,
 FROM world as w
 ORDER BY 1 ASC
 LIMIT 10;
-```
 
-[architecture]: ./architecture.png "Architecture"
