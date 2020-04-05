@@ -19,3 +19,16 @@ Content-Type: application/json
 ###
 
 GET http://localhost:{{port}}/guides
+
+###
+
+GET http://localhost:{{port}}/guides/5
+
+###
+
+PATCH http://localhost:{{port}}/guides/5
+Content-Type: application/json
+
+{
+    "name": "Teste! Atualizado!"
+}

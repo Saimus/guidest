@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Patch } from '@nestjs/common';
 import { GuidesService } from './guides.service';
 
 @Controller('guides')
@@ -16,4 +16,18 @@ export class GuidesController {
     getAllGuides() {
         return this.guidesService.getAll();
     }
+
+    @Get(':id')
+    getGuide(@Param('id') id: number) {
+        return this.guidesService.get(id);
+    }
+
+    @Patch(':id')
+    async patchUpdate(
+        @Param('id') id: number,
+        @Body('name') name
+    ) {
+        await this.guidesService.update(id, name);
+    }
+
 }

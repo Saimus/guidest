@@ -20,4 +20,11 @@ export class GuidesService {
         return await this.guidesRepository.find();
     }
 
+    async get(id: number) {
+        return await this.guidesRepository.findOne(id);
+    } 
+
+    async update(id: number, name: string) {
+        await this.guidesRepository.update(id, { name: name });
+    }
 }
