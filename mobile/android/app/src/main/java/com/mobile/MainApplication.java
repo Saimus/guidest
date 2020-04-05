@@ -1,4 +1,4 @@
-package com.mobile;
+package com.saimus.guidest;
 
 import android.app.Application;
 import android.net.Uri;

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mobile">
+    package="com.saimus.guidest">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -35,6 +35,7 @@
 
       <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="YOUR-APP-URL-HERE" />
       <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="YOUR-APP-SDK-VERSION-HERE" />
+      <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDqKlUMKB2kMPVW6IObAQ5BBRRqDPPvdD8"/>
 
       <activity
         android:name=".MainActivity"

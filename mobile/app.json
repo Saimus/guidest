@@ -1,17 +1,25 @@
 {
-  "name": "mobile",
-  "displayName": "mobile",
-  "expo": {
     "name": "mobile",
-    "slug": "mobile",
-    "version": "1.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+    "displayName": "mobile",
+    "expo": {
+        "name": "mobile",
+        "slug": "mobile",
+        "version": "1.0.0",
+        "platforms": [
+            "ios",
+            "android",
+            "web"
+        ],
+        "assetBundlePatterns": [
+            "**/*"
+        ]
+    },
+    "android": {
+        "package": "com.saimus.guidest",
+        "config": {
+            "googleMaps": {
+                "apiKey": "AIzaSyDqKlUMKB2kMPVW6IObAQ5BBRRqDPPvdD8"
+            }
+        }
+    }
 }
