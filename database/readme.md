@@ -8,7 +8,6 @@ First we need to run the following command to get the postgres image .
 
 After finishing the image download, we will run the command:
 
-
     docker run --name postgres -e POSTGRES_PASSWORD=12345678a -d -p 5432:5432 postgres
 
 It will create and start the postgres docker container, using the default user **postgres** and the password **12345678a** to connect to the database.
@@ -27,5 +26,20 @@ After running the previous command the database password will be asked. Type the
 You will receive a feedback in the terminal. Now you are connected to the postgres. Now we just need to create the database. Just run the following command:
 
      create database guidest;
+    
+Now you can list all databases to check
+
+     \list (\l)
+
+And connect to the new database
+
+    \connect (\c) guidest
+
+Database default configuration is kept at config/orm.config.ts. We can override settings env variables (not versioned):
+    TYPEORM_HOST
+    TYPEORM_PORT
+    TYPEORM_USERNAME
+    TYPEORM_PASSWORD
+    TYPEORM_DATABASE
 
 
